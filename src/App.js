@@ -1,14 +1,33 @@
+import React from "react";
 import './App.css';
-import HomePage from './views/homePage';
+import LandingPage from './views/landingPage';
 import LoginPage from './views/loginPage';
 import RegisterPage from './views/registerPage';
-
-function App() {
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+import ProtectedRoute from "./routes/protectedRoute";
+ 
+export default function App() {
   return (
-    <div className="App">
-      <HomePage/>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login">
+          <LoginPage />
+        </Route>
+        <ProtectedRoute path="/landing">
+          <LandingPage />
+        </ProtectedRoute>
+        <Route exact path="/">
+          <Redirect exact from="/" to="landing" />
+        </Route>
+        <Route path="*">
+          <Redirect from="/" to="landing" />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
-
-export default App;
