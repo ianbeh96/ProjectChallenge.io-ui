@@ -18,6 +18,9 @@ export default function App() {
         <Route path="/login">
           <LoginPage />
         </Route>
+        <Route path="/register">
+          <RegisterPage />
+        </Route>
         <ProtectedRoute path="/landing">
           <LandingPage />
         </ProtectedRoute>
