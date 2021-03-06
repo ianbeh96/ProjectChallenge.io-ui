@@ -39,25 +39,23 @@ class loginPage extends React.Component {
       return <Redirect to="/" />;
     }
     return (
-      <div className="container">
-        <form onSubmit={this.login}>
-          <h1>Please sign in</h1>
-          <div className="row">
-            <div className="col">
-              <input
-                type="text"
-                name="user_id"
-                onChange={this.handleFormChange}
-                placeholder="Username"
-              />
-              <input
-                type="password"
-                name="user_password"
-                onChange={this.handleFormChange}
-                placeholder="Password"
-              />
-              <input type="submit" value="Login" />
-            </div>
+      <div className="text-center m-auto w-2/5  ">
+        <form className="border-4 " onSubmit={this.login} >
+          <h1>Sign In Page</h1>
+          <div className="inline-grid border-4 m-auto w-2/5 " >
+            <input
+              type="text"
+              name="user_id"
+              onChange={this.handleFormChange}
+              placeholder="Username"
+            />
+            <input
+              type="password"
+              name="user_password"
+              onChange={this.handleFormChange}
+              placeholder="Password"
+            />
+            <input className="" type="submit" value="Login" />
           </div>
           <p>user_id === "admin" && user_password === "Test12345"</p>
         </form>
